@@ -7,15 +7,15 @@
 Summary:	Alien::Build - build external dependencies for use in CPAN
 Summary(pl.UTF-8):	Alien::Build - budowanie zewnętrznych zależności do wykorzystania w CPAN
 Name:		perl-Alien-Build
-Version:	2.21
+Version:	2.40
 Release:	1
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Alien/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	81383a4db065c2d4d40c424fa785c1f9
+# Source0-md5:	a5d6b8e41014b932456e956e1d4889cf
 URL:		https://metacpan.org/release/Alien-Build
-BuildRequires:	perl-devel >= 1:5.8.1
+BuildRequires:	perl-devel >= 1:5.8.4
 BuildRequires:	perl-ExtUtils-CBuilder
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.64
 BuildRequires:	perl-ExtUtils-ParseXS >= 3.30
@@ -27,9 +27,11 @@ BuildRequires:	rpmbuild(macros) >= 1.745
 BuildRequires:	perl(Test2::API) >= 1.302096
 BuildRequires:	perl(Text::ParseWords) >= 3.26
 BuildRequires:	perl-Capture-Tiny >= 0.17
+BuildRequires:	perl-Digest-SHA
 BuildRequires:	perl-FFI-CheckLib >= 0.11
 BuildRequires:	perl-File-Which >= 1.10
 BuildRequires:	perl-File-chdir
+BuildRequires:	perl-JSON-PP
 BuildRequires:	perl-Path-Tiny >= 0.077
 BuildRequires:	perl-Scalar-List-Utils >= 1.33
 BuildRequires:	perl-Test2-Suite >= 0.000060
@@ -74,7 +76,7 @@ przez inne moduły Perla.
 Summary:	Test::Alien - testing tools for Alien modules
 Summary(pl.UTF-8):	Test::Alien - narzędzia testowe dla modułów Alien
 Group:		Development/Languages/Perl
-Requires:	perl-Alien-Build = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 Requires:	perl(Test2::API) >= 1.302096
 
 %description -n perl-Test-Alien
@@ -187,6 +189,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n perl-Test-Alien
 %defattr(644,root,root,755)
-%doc Changes Changes.Test-Alien
+%doc Changes.Test-Alien
 %{perl_vendorlib}/Test
 %{_mandir}/man3/Test::Alien*.3pm*
