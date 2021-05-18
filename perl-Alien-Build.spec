@@ -8,7 +8,7 @@ Summary:	Alien::Build - build external dependencies for use in CPAN
 Summary(pl.UTF-8):	Alien::Build - budowanie zewnętrznych zależności do wykorzystania w CPAN
 Name:		perl-Alien-Build
 Version:	2.40
-Release:	2
+Release:	3
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
