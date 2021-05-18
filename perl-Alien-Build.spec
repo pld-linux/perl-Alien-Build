@@ -38,6 +38,7 @@ BuildRequires:	perl-Test2-Suite >= 0.000060
 %endif
 Requires:	perl(Text::ParseWords) >= 3.26
 Requires:	perl-File-Which >= 1.10
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
