@@ -8,7 +8,7 @@ Summary:	Alien::Build - build external dependencies for use in CPAN
 Summary(pl.UTF-8):	Alien::Build - budowanie zewnętrznych zależności do wykorzystania w CPAN
 Name:		perl-Alien-Build
 Version:	2.40
-Release:	1
+Release:	2
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -66,7 +66,7 @@ Alien:: modules. Modules in the Alien namespace are used to locate and
 install (if necessary) external libraries needed by other Perl
 modules.
 
-%description -n perl-Alien-Base
+%description -n perl-Alien-Base -l pl.UTF-8
 Alien::Base obejmuje klasy bazowe pomagające w konstrukcji modułów
 Alien::. Moduły w przestrzeni nazw Alien służą do lokalizacji i
 instalowania (w razie potrzeby) zewnętrznych bibliotek wymaganych
