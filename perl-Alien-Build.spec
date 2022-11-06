@@ -7,13 +7,13 @@
 Summary:	Alien::Build - build external dependencies for use in CPAN
 Summary(pl.UTF-8):	Alien::Build - budowanie zewnętrznych zależności do wykorzystania w CPAN
 Name:		perl-Alien-Build
-Version:	2.40
-Release:	3
+Version:	2.72
+Release:	1
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Alien/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a5d6b8e41014b932456e956e1d4889cf
+# Source0-md5:	561012b320b40929630329a81acaf905
 URL:		https://metacpan.org/release/Alien-Build
 BuildRequires:	perl-devel >= 1:5.8.4
 BuildRequires:	perl-ExtUtils-CBuilder
@@ -110,6 +110,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/Alien/Base/{Authoring,FAQ}.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/Alien/Build/Manual.pod
 %{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/Alien/Build/Manual/*.pod
 %{__rm} $RPM_BUILD_ROOT%{perl_vendorlib}/Alien/Build/Plugin/*.pod
 
@@ -135,6 +136,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/Alien/Build/Plugin/Build
 %{perl_vendorlib}/Alien/Build/Plugin/Core
 %{perl_vendorlib}/Alien/Build/Plugin/Decode
+%{perl_vendorlib}/Alien/Build/Plugin/Digest
 %{perl_vendorlib}/Alien/Build/Plugin/Download
 %{perl_vendorlib}/Alien/Build/Plugin/Extract
 %{perl_vendorlib}/Alien/Build/Plugin/Fetch
@@ -153,19 +155,21 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/Alien::Build::Interpolate*.3pm*
 %{_mandir}/man3/Alien::Build::Log*.3pm*
 %{_mandir}/man3/Alien::Build::MM.3pm*
+%{_mandir}/man3/Alien::Build::Manual.3pm*
 %{_mandir}/man3/Alien::Build::Manual::*.3pm*
 %{_mandir}/man3/Alien::Build::Plugin.3pm*
 %{_mandir}/man3/Alien::Build::Plugin::Build*.3pm*
 %{_mandir}/man3/Alien::Build::Plugin::Core*.3pm*
 %{_mandir}/man3/Alien::Build::Plugin::Decode*.3pm*
+%{_mandir}/man3/Alien::Build::Plugin::Digest*.3pm*
 %{_mandir}/man3/Alien::Build::Plugin::Download*.3pm*
 %{_mandir}/man3/Alien::Build::Plugin::Extract*.3pm*
 %{_mandir}/man3/Alien::Build::Plugin::Fetch*.3pm*
-%{_mandir}/man3/Alien::Build::Plugin::Gather::IsolateDynamic.3pm*
-%{_mandir}/man3/Alien::Build::Plugin::PkgConfig::*.3pm*
+%{_mandir}/man3/Alien::Build::Plugin::Gather*.3pm*
+%{_mandir}/man3/Alien::Build::Plugin::PkgConfig*.3pm*
 %{_mandir}/man3/Alien::Build::Plugin::Prefer*.3pm*
 %{_mandir}/man3/Alien::Build::Plugin::Probe*.3pm*
-%{_mandir}/man3/Alien::Build::Plugin::Test::Mock.3pm*
+%{_mandir}/man3/Alien::Build::Plugin::Test*.3pm*
 %{_mandir}/man3/Alien::Build::Temp.3pm*
 %{_mandir}/man3/Alien::Build::Util.3pm*
 %{_mandir}/man3/Alien::Build::Version::Basic.3pm*
@@ -181,12 +185,14 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/Alien/Base/PkgConfig.pm
 %{perl_vendorlib}/Alien/Base/Wrapper.pm
 %{perl_vendorlib}/Alien/Role.pm
+%{perl_vendorlib}/Alien/Util.pm
 %{_mandir}/man3/Alien::Base.3pm*
 %{_mandir}/man3/Alien::Base::Authoring.3pm*
 %{_mandir}/man3/Alien::Base::FAQ.3pm*
 %{_mandir}/man3/Alien::Base::PkgConfig.3pm*
 %{_mandir}/man3/Alien::Base::Wrapper.3pm*
 %{_mandir}/man3/Alien::Role.3pm*
+%{_mandir}/man3/Alien::Util.3pm*
 
 %files -n perl-Test-Alien
 %defattr(644,root,root,755)
