@@ -1,20 +1,20 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define		pdir	Alien
 %define		pnam	Build
 Summary:	Alien::Build - build external dependencies for use in CPAN
 Summary(pl.UTF-8):	Alien::Build - budowanie zewnętrznych zależności do wykorzystania w CPAN
 Name:		perl-Alien-Build
-Version:	2.72
+Version:	2.83
 Release:	1
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Alien/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	561012b320b40929630329a81acaf905
-URL:		https://metacpan.org/release/Alien-Build
+Source0:	https://www.cpan.org/modules/by-module/Alien/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	fbec7ad3281181db0cd3e2219710815e
+URL:		https://metacpan.org/dist/Alien-Build
 BuildRequires:	perl-devel >= 1:5.8.4
 BuildRequires:	perl-ExtUtils-CBuilder
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.64
@@ -34,7 +34,7 @@ BuildRequires:	perl-File-chdir
 BuildRequires:	perl-JSON-PP
 BuildRequires:	perl-Path-Tiny >= 0.077
 BuildRequires:	perl-Scalar-List-Utils >= 1.33
-BuildRequires:	perl-Test2-Suite >= 0.000060
+BuildRequires:	perl-Test2-Suite >= 0.000121
 %endif
 Requires:	perl(Text::ParseWords) >= 3.26
 Requires:	perl-File-Which >= 1.10
